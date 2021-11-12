@@ -1,0 +1,30 @@
+body
+{
+    background-color: yellow;
+}
+#container
+{
+    height: 400px;
+    width: 400px;
+    background-color: brown;
+    position: absolute;
+    margin: 150px 150px 150px 450px;
+    
+}
+#screen
+{
+    height: 50px;
+    width: 100%;
+    font-size: 2rem;
+}
+#bu
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+button
+{
+    margin: 10px;
+    height: 50px;
+    width: 50px;
+}

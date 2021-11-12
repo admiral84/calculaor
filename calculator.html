@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<div id=container>
+<body onload="document.getElementById('screen').value=''">
+    <input type="text" id="screen" onkeydown="myfunction(event)" onkeyup="myf(event)"> <br>
+    <div id="bu">
+    <button value="1" id="1" onkeydown="myfunction(event)" onkeyup="myf()" onclick="document.getElementById('screen').value+=this.value">1</button>
+    <button value="2" id="2" onkeydown="myfunction(event)" onkeyup="myf()" onclick="document.getElementById('screen').value+=this.value">2</button>
+    <button value="3" id="3" onkeydown="myfunction(event)" onkeyup="myf()" onclick="document.getElementById('screen').value+=this.value">3</button><br>
+    <button value="4" id="4" onkeydown="myfunction(event)" onkeyup="myf()" onclick="document.getElementById('screen').value+=this.value">4</button>
+    <button value="5" id="5" onkeydown="myfunction(event)" onkeyup="myf()" onclick="document.getElementById('screen').value+=this.value">5</button>
+    <button value="6" id="6" onkeydown="myfunction(event)" onkeyup="myf()" onclick="document.getElementById('screen').value+=this.value">6</button><br>
+    <button value="7" id="7" onkeydown="myfunction(event)" onkeyup="myf()" onclick="document.getElementById('screen').value+=this.value">7</button>
+    <button value="8" id="8" onkeydown="myfunction(event)" onkeyup="myf()" onclick="document.getElementById('screen').value+=this.value">8</button>
+    <button value="9" id="9" onkeydown="myfunction(event)" onkeyup="myf()" onclick="document.getElementById('screen').value+=this.value">9</button><br>
+    <button value="0" id="0" onkeydown="myfunction(event)" onkeyup="myf()" onclick="document.getElementById('screen').value+=this.value">0</button>
+    <button value="+" id="+" onkeydown="myfunction(event)" onkeyup="myf()" onclick="document.getElementById('screen').value+=this.value">+</button>
+    <button value="-" id="-" onkeydown="myfunction(event)" onkeyup="myf()" onclick="document.getElementById('screen').value+=this.value">-</button><br>
+    <button value="*" id="*" onkeydown="myfunction(event)" onkeyup="myf()" onclick="document.getElementById('screen').value+=this.value">*</button>
+    <button value="/" id="/" onkeydown="myfunction(event)" onkeyup="myf()" onclick="document.getElementById('screen').value+=this.value">/</button>
+    <button value="=" id="=" onkeydown="myfunction(event)" onkeyup="myf()" onclick="calculer()">=</button>
+    <button value="c" id="c" onclick="document.getElementById('screen').value=''" >c</button>
+    </div>
+</div>
+
+
+    
+  <script>
+      
+      function calculer()
+      {
+        var ch=document.getElementById('screen').value;
+        var l=ch.length;
+        if(ch.indexOf("+")>0)
+        {
+        var p= ch.indexOf("+");
+        var ch1=ch.slice(0,p);
+        var ch2=ch.slice(p+1,l)
+        if(ch1.indexOf(".") && ch2.indexOf(".")<0)
+        {
+        var n=parseInt(ch1);
+        var m=parseInt(ch2);
+        }
+        else
+        {
+            var n=parseFloat(ch1);
+            var m=parseFloat(ch2);
+        }
+        var somme=m+n;
+
+        document.getElementById("screen").value=somme;
+    }
+
+        //la soustraction
+
+        if(ch.indexOf("-")>0)
+        {
+        var p= ch.indexOf("-");
+        var ch1=ch.slice(0,p);
+        var ch2=ch.slice(p+1,l)
+        if(ch1.indexOf(".") && ch2.indexOf(".")<0)
+        {
+        var n=parseInt(ch1);
+        var m=parseInt(ch2);
+        }
+        else
+        {
+            var n=parseFloat(ch1);
+            var m=parseFloat(ch2);
+        }
+        var sous=n-m;
+
+        document.getElementById("screen").value=sous;
+    }
+        //* la multiplication
+        if(ch.indexOf("*")>0)
+        {
+        var p= ch.indexOf("*");
+        var ch1=ch.slice(0,p);
+        var ch2=ch.slice(p+1,l)
+        if(ch1.indexOf(".") && ch2.indexOf(".")<0)
+        {
+        var n=parseInt(ch1);
+        var m=parseInt(ch2);
+        }
+        else
+        {
+            var n=parseFloat(ch1);
+            var m=parseFloat(ch2);
+        }
+        var multi=m*n;
+
+        document.getElementById("screen").value=multi;
+    }
+        //* la division
+
+        if(ch.indexOf("/")>0)
+        {
+        var p= ch.indexOf("/");
+        var ch1=ch.slice(0,p);
+        var ch2=ch.slice(p+1,l)
+        
+            var n=parseFloat(ch1);
+            var m=parseFloat(ch2);
+        
+        var division=n/m;
+
+        document.getElementById("screen").value=division;
+        }
+
+       
+      }
+      function myfunction(event)
+      {
+          var x=event.key;
+          switch (x)
+          {
+          
+          case "1":  document.getElementById("1").style.background="red";break;
+          case "2":  document.getElementById("2").style.background="red";break;
+          case "3":  document.getElementById("3").style.background="red";break;
+          case "4":  document.getElementById("4").style.background="red";break;
+          case "5":  document.getElementById("5").style.background="red";break;
+          case "6":  document.getElementById("6").style.background="red";break;
+          case "6":  document.getElementById("6").style.background="red";break;
+          case "7":  document.getElementById("7").style.background="red";break;
+          case "8":  document.getElementById("8").style.background="red";break;
+          case "9":  document.getElementById("9").style.background="red";break;
+          case "0":  document.getElementById("0").style.background="red";break;
+          case "+":  document.getElementById("+").style.background="red";break;
+          case "-":  document.getElementById("-").style.background="red";break;
+          case "*":  document.getElementById("*").style.background="red";break;
+          case "/":  document.getElementById("/").style.background="red";break;
+          case "=":  
+          {document.getElementById("=").style.background="red";
+          calculer();
+          var st=document.getElementById("screen").value;
+          
+          st=st.replace("=","");
+          document.getElementById("screen").value=st;
+           }
+          break;
+        
+        
+        }
+          
+         
+        
+      }
+      function myf(event)
+      {
+          var x=event.key;
+          switch (x)
+          {
+          case "1":  document.getElementById("1").style.background="white";break;
+          case "2":  document.getElementById("2").style.background="white";break;
+          case "3":  document.getElementById("3").style.background="white";break;
+          case "4":  document.getElementById("4").style.background="white";break;
+          case "5":  document.getElementById("5").style.background="white";break;
+          case "6":  document.getElementById("6").style.background="white";break;
+          case "6":  document.getElementById("6").style.background="white";break;
+          case "7":  document.getElementById("7").style.background="white";break;
+          case "8":  document.getElementById("8").style.background="white";break;
+          case "9":  document.getElementById("9").style.background="white";break;
+          case "0":  document.getElementById("0").style.background="white";break;
+          case "+":  document.getElementById("+").style.background="white";break;
+          case "-":  document.getElementById("-").style.background="white";break;
+          case "*":  document.getElementById("*").style.background="white";break;
+          case "/":  document.getElementById("/").style.background="white";break;
+          case "=":  document.getElementById("=").style.background="white";break;
+          }
+      }
+  </script>
+    
+</body>
+</html>
